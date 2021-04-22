@@ -19,6 +19,7 @@ public class RegistrationActivity extends AppCompatActivity {
     EditText etConfirmPassword;
     Button btSubmit;
     Context context;
+    ModelRegistration registration;
     CommonToasts commonToasts;
 
     @Override
@@ -28,6 +29,7 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         initIds();
         setClickListeners();
+        registration = new ModelRegistration();
         commonToasts = new CommonToasts(context);
     }
 
@@ -57,11 +59,21 @@ public class RegistrationActivity extends AppCompatActivity {
                 etPasswordReg.setError(CommonToasts.CANNOT_BE_EMPTY);
                 etConfirmPassword.setError(CommonToasts.CANNOT_BE_EMPTY);
             } else {
-                String name = etName.getText().toString().trim();
-                String email = etEmail.getText().toString().trim();
-                String phone = etPhoneNumber.getText().toString().trim();
-                String uName = etUserName.getText().toString().trim();
-                String passWord = etConfirmPassword.getText().toString().trim();
+                String name;
+                String email;
+                String phone;
+                String uName;
+                String passWord;
+                name = etName.getText().toString().trim();
+                email = etEmail.getText().toString().trim();
+                phone = etPhoneNumber.getText().toString().trim();
+                uName = etUserName.getText().toString().trim();
+                passWord = etConfirmPassword.getText().toString().trim();
+                registration.setEmail(email);
+                registration.setName(name);
+                registration.setPhone(phone);
+                registration.setuName(uName);
+                registration.setPassWord(passWord);
             }
         });
     }

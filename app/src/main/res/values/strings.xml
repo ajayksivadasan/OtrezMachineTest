@@ -4,4 +4,9 @@
     <string name="login">Login</string>
     <string name="pass_word">Password :</string>
     <string name="new_user_register">New User ? Register…</string>
+    <string name="name">Name</string>
+    <string name="email">E-mail</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="submit">Submit</string>
 </resources>

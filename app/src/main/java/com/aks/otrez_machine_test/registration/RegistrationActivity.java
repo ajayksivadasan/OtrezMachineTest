@@ -1,6 +1,7 @@
 package com.aks.otrez_machine_test.registration;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.aks.otrez_machine_test.R;
 import com.aks.otrez_machine_test.common.CommonToasts;
+import com.aks.otrez_machine_test.database.RegistrationHelper;
+import com.aks.otrez_machine_test.login.LoginActivity;
 
 public class RegistrationActivity extends AppCompatActivity {
     EditText etName;
@@ -21,6 +24,7 @@ public class RegistrationActivity extends AppCompatActivity {
     Context context;
     ModelRegistration registration;
     CommonToasts commonToasts;
+    RegistrationHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,7 @@ public class RegistrationActivity extends AppCompatActivity {
         setClickListeners();
         registration = new ModelRegistration();
         commonToasts = new CommonToasts(context);
+        helper = new RegistrationHelper(context);
     }
 
     private void initIds() {
@@ -74,6 +79,9 @@ public class RegistrationActivity extends AppCompatActivity {
                 registration.setPhone(phone);
                 registration.setuName(uName);
                 registration.setPassWord(passWord);
+                helper.insertIntoUsers(registration);
+                commonToasts.setToastMessage("Registration Successful");
+                startActivity(new Intent(context, LoginActivity.class));
             }
         });
     }

@@ -32,6 +32,8 @@ public class ItemListingActivity extends AppCompatActivity {
 
         } else {
             commonToasts.setToastMessage(CommonToasts.SOMETHING_ERROR_OCCURRED);
+            finish();
+            finishAffinity();
             startActivity(new Intent(context, HomeListingActivity.class));
         }
     }

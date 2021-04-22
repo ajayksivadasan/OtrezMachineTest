@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OtrezMachineTest"
         tools:ignore="AllowBackup">
-        <activity android:name=".home.HomeListingActivity"></activity>
+        <activity android:name=".item_listing.ItemListingActivity"></activity>
+        <activity android:name=".home.HomeListingActivity" />
         <activity
             android:name=".registration.RegistrationActivity"
             android:screenOrientation="portrait" />

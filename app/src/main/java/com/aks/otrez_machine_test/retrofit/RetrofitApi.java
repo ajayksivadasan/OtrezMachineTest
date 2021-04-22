@@ -6,6 +6,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitApi {
+    public static final String BASE_URL = "http://fcapi.pulseerp.co.in/";
     private static Retrofit retrofit = null;
 
     public static Retrofit getApiClient() {
@@ -13,7 +14,7 @@ public class RetrofitApi {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
         retrofit = new Retrofit.Builder()
-                .baseUrl(" http://example.mcbrid.com")
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();

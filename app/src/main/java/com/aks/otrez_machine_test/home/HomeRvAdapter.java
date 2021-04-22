@@ -24,9 +24,14 @@ public class HomeRvAdapter extends RecyclerView.Adapter<HomeRvAdapter.ViewHolder
     List<HomeItemModel> itemModels = new ArrayList<>();
     Context context;
 
-    HomeRvAdapter(Context context, List<HomeItemModel> itemModels) {
+    public HomeRvAdapter(Context context, List<HomeItemModel> itemModels) {
         this.context = context;
         this.itemModels = itemModels;
+    }
+
+    public void updateAdapter(List<HomeItemModel> itemModels) {
+        this.itemModels = itemModels;
+        notifyDataSetChanged();
     }
 
     @NonNull

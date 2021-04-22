@@ -2,6 +2,7 @@ package com.aks.otrez_machine_test.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.aks.otrez_machine_test.registration.ModelRegistration;
@@ -34,5 +35,15 @@ public class RegistrationHelper {
         values.put(COL_PHONE, model.getPhone());
         values.put(COL_U_NAME, model.getuName());
         sq.insert(TABLE_NAME_USERS, null, values);
+    }
+
+    public boolean ifUserIsInDb(String uName, String pWord) {
+        boolean login = false;
+        Cursor cursor = sq.rawQuery("select * from " + TABLE_NAME_USERS + " where " + COL_U_NAME + " = " + uName + " and " + COL_PASSWORD + " = " + pWord, null);
+        if (cursor.moveToFirst()) {
+            login = true;
+        }
+        cursor.close();
+        return login;
     }
 }

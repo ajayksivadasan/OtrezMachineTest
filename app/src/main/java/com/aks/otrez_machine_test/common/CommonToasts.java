@@ -17,6 +17,7 @@ public class CommonToasts {
     public static final String SUCCESSFULLY_UPDATED = "Successfully Updated";
     public static final String NOTHING_TO_UPLOAD = "Nothing To Upload";
     public static final String CANNOT_BE_EMPTY = "Cannot Be Empty";
+    public static final String USER_NAME_AND_PASSWORD_CANNOT_BE_EMPTY = "User Name and Password Cannot be Empty";
     final Context context;
 
     public CommonToasts(Context context) {

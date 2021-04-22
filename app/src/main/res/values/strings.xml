@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Otrez Machine Test</string>
+    <string name="user_name">User Name</string>
+    <string name="login">Login</string>
+    <string name="pass_word">Password :</string>
+    <string name="new_user_register">New User ? Register…</string>
 </resources>

@@ -4,6 +4,7 @@
     package="com.aks.otrez_machine_test">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,16 +15,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OtrezMachineTest"
         tools:ignore="AllowBackup">
-        <activity android:name=".item_listing.ItemListingActivity"></activity>
-        <activity android:name=".home.HomeListingActivity" />
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".item_listing.ItemListingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.HomeListingActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".registration.RegistrationActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".login.LoginActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +37,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
     </application>
-
 </manifest>
